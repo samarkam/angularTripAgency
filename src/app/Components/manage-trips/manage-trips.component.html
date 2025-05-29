@@ -1,0 +1,35 @@
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h4>Manage Trips</h4>
+            <app-add-modal></app-add-modal>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item flex-fill id template">
+                    ID
+                </li>
+                <li class="list-group-item flex-fill name template">
+                    Name
+                </li>
+                <li class="list-group-item flex-fill manage template">
+                    Manage
+                </li>
+            </ul>
+            <ul class="list-group list-group-horizontal mb-2 " *ngFor="let trip of trips" >
+                <li class="list-group-item flex-fill id">
+                    {{trip.id}}
+                </li>
+                <li class="list-group-item flex-fill name">
+                    {{trip.title}}, {{trip.country}}, {{trip.dayOut}} - {{trip.dayIn}}
+                </li>
+                <li class="list-group-item flex-fill button">
+                    <app-edit-modal [id]="trip.id"></app-edit-modal>
+                </li>
+                <li class="list-group-item flex-fill button">
+                    <button class="btn btn-danger" (click)="remove(trip.id)">Remove trip</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>

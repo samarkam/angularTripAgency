@@ -1,0 +1,23 @@
+<div class="card">
+   <img [src]="trip?.image?.[0]" class="card-img-top"  alt="...">
+    <!-- <h6 class="country">Poland</h6> -->
+    <div class="name">
+        <h4>{{trip?.title}}</h4>
+        <span class="badge rounded-pill bg-warning" style="padding: 3px 5px; height: 1.5em; margin-top: 0.55em; margin-left: 0.3em;">
+            <strong style="font-size: 0.5em;">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <i class="bi bi-star"></i>
+                {{getAvgReview()}}/5.0
+            </strong>
+        </span>
+    </div>
+    <p class="date">{{trip?.dayOut}} - {{trip?.dayIn}}</p>
+    <button type="button" class="btn btn-grad plus-button sign-button" id="plus-button" [disabled]="this.counter == trip?.places" (click)="addPlace(trip!.id)">+</button>
+    <button type="button" class="btn btn-grad minus-button sign-button" id="minus-button" (click)="removePlace(trip!.id)">-</button>
+    <h6 class="counter">{{places}}</h6>
+    <h5 class="price"  *ngIf="trip!== undefined" >TND{{trip.price * places}}</h5>
+</div>
+

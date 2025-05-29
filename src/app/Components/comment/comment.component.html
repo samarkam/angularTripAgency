@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="photo-section">
+        <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg" alt="person-photo">
+        <h5 class="nickname">{{name}}</h5>
+        <div class="stars-container">
+            <strong>
+                <i [ngClass]="{'bi-star-fill' : data.points >= 1, 'bi-star' : data.points < 1}" class="bi star bi-star-fill"></i>
+                <i [ngClass]="{'bi-star-fill' : data.points >= 2, 'bi-star' : data.points < 2}" class="bi star bi-star-fill"></i>
+                <i [ngClass]="{'bi-star-fill' : data.points >= 3, 'bi-star' : data.points < 3}" class="bi star bi-star-fill"></i>
+                <i [ngClass]="{'bi-star-fill' : data.points >= 4, 'bi-star' : data.points < 4}" class="bi star bi-star-fill"></i>
+                <i [ngClass]="{'bi-star-fill' : data.points >= 5, 'bi-star' : data.points < 5}" class="bi star bi-star"></i>
+            </strong>
+        </div>
+        <div class="date-container">
+            {{data.date}}
+        </div>
+    </div>
+    <div class="text-container">
+        <p class="review">
+            {{data.text}}
+        </p>
+    </div>
+</div>

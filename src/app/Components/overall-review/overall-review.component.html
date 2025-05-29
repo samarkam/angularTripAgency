@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="overall-rating">
+        <!-- <h3>Overall rating</h3> -->
+        <div class="rating">
+            <i class="star bi bi-star-fill" style="margin-left: 0px; font-size: 2.3rem;"></i>
+            <h1>{{mean.toFixed(1)}}/5.0</h1>
+        </div>
+    </div>
+    <div class="detailed-rating">
+        <div class="stars stars-5">
+            5
+            <i class="star bi bi-star-fill"></i>
+            <div class="progress">
+                <div class="progress-bar bg-warning" [ngStyle]="{'width': classes[4]}" role="progressbar" aria-label="5-star" [attr.aria-valuenow]="100*points[4]/maxOfPoints" aria-valuemin="0" aria-valuemax="100">{{points[4]}}</div>
+            </div>
+        </div>
+        <div class="stars stars-4">
+            4
+            <i class="star bi bi-star-fill"></i>
+            <div class="progress">
+                <div class="progress-bar bg-warning" [ngStyle]="{'width': 100*points[3]/maxOfPoints+'%'}" role="progressbar" aria-label="4-star" [attr.aria-valuenow]="100*points[3]/maxOfPoints" aria-valuemin="0" aria-valuemax="100">{{points[3]}}</div>
+            </div>
+        </div>
+        <div class="stars stars-3">
+            3
+            <i class="star bi bi-star-fill"></i>
+            <div class="progress">
+                <div class="progress-bar bg-warning" [ngStyle]="{'width': 100*points[2]/maxOfPoints+'%'}" role="progressbar" aria-label="3-star" [attr.aria-valuenow]="100*points[2]/maxOfPoints" aria-valuemin="0" aria-valuemax="100">{{points[2]}}</div>
+            </div>
+        </div>
+        <div class="stars stars-2">
+            2
+            <i class="star bi bi-star-fill"></i>
+            <div class="progress">
+                <div class="progress-bar bg-warning" [ngStyle]="{'width': 100*points[1]/maxOfPoints+'%'}" role="progressbar" aria-label="2-star" [attr.aria-valuenow]="100*points[1]/maxOfPoints" aria-valuemin="0" aria-valuemax="100">{{points[1]}}</div>
+            </div>
+        </div>
+        <div class="stars stars-1">
+            1
+            <i class="star bi bi-star-fill"></i>
+            <div class="progress">
+                <div class="progress-bar bg-warning" [ngStyle]="{'width': 100*points[0]/maxOfPoints+'%'}" role="progressbar" aria-label="1-star" [attr.aria-valuenow]="100*points[0]/maxOfPoints" aria-valuemin="0" aria-valuemax="100">{{points[0]}}</div>
+            </div>
+        </div>
+    </div>
+</div>

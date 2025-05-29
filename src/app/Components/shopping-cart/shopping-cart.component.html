@@ -1,0 +1,34 @@
+
+<button class="btn btn-grad" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" aria-controls="cartCanvas" style="position: relative; margin: 12px;">
+    <i class="bi bi-cart"></i>
+    <!-- <span class="position-absolute translate-middle badge rounded-pill" [ngClass]="{'bg-danger': totalPlaces() <= 10, 'bg-success': totalPlaces() > 10}" style="left: 0%; top: 0%;">
+       {{totalPlaces()}}
+    </span> -->
+</button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Your cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body">
+    <!-- Your cart is empty -->
+              <div *ngIf="cart && cart.length && cart.length == 0">  Add Trip</div>
+
+     <div *ngIf="cart && cart.length && cart.length != 0">
+        <!-- <div *ngFor="let item of cart; index as idx">
+            <app-shopping-cart-card [trip]="findTrip(item.id)" [places]="item.places"></app-shopping-cart-card>
+        </div> -->
+    </div>
+</div>
+<div class="offcanvas-footer">
+    <div class="nav sticky-bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <h5 class="total">Total: TND{{totalPrice()}}</h5>
+                <div class="btn btn-grad checkout" (click)="checkout()">Checkout</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

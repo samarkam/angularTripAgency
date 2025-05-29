@@ -1,0 +1,22 @@
+<body>
+    <div class="card login">
+        <form [formGroup]="registerForm" class="forms">
+            <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="First name" aria-label="First name" formControlName="firstName">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" formControlName="lastName">
+                </div>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="E-mail" aria-label="E-mail" formControlName="email">
+            </div>
+            <div class="col">
+                <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+                formControlName="password">
+            </div>
+            <button class="btn btn-grad" (click)="submit()">Sign up</button>
+        </form>
+    </div>
+</body>

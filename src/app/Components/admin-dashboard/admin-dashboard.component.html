@@ -1,0 +1,49 @@
+<body>
+    <!-- <div class="card persistence">
+        <div class="card-header">Persistence mode settings</div>
+        <div class="card-body">
+            <form [formGroup]="settings" novalidate>
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item local">
+                        <input type="radio" value="local" id="local" [checked]="isLocal()" (click)="setLocal()">
+                        Local
+                        <input type="radio" value="local" id="session" [checked]="isSession()" (click)="setSession()">
+                        Session
+                        <input type="radio" value="local" id="none" [checked]="isNone()" (click)="setNone()">
+                        None
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div> -->
+    <div class="card">
+        <div class="card-header">Admin Dashboard</div>
+        <div class="card-body">
+            <!-- Templates -->
+            <ul class="list-group list-group-horizontal templates">
+                <li class="list-group-item flex-fill uid">UID</li>
+                <li class="list-group-item flex-fill email">E-mail</li>
+                <li class="list-group-item flex-fill roless">Roles</li>
+            </ul>
+            <!-- To populate -->
+            <form [formGroup]="form" novalidate>
+            <ul class="list-group list-group-horizontal mb-2 " *ngFor="let user of users; index as idx">
+                <li class="list-group-item uid">{{user.uid}}</li>
+                <li class="list-group-item email">{{user.email}}</li>
+                <li class="list-group-item roles">
+                    <input class="admin" type="checkbox" role="switch" [checked]="user.roles.admin" [id]="idx" [value]="user.roles" (change)="onCheckboxChange($event)">
+                    Admin
+                </li>
+                <li class="list-group-item roles">
+                    <input class="manager" type="checkbox" [checked]="user.roles.manager" [id]="idx" [value]="user.roles" (change)="onCheckboxChange($event)">
+                    Manager
+                </li>
+                <li class="list-group-item roles">
+                    <input class="banned" type="checkbox" [checked]="user.roles.banned" [id]="idx" [value]="user.roles" (change)="onCheckboxChange($event)">
+                    Banned
+                </li>
+            </ul>
+            </form>
+        </div>
+    </div>
+</body>

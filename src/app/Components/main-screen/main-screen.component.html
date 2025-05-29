@@ -1,0 +1,90 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><div class="main">
+    <img class="background" src="assets/logoBackground.jpeg" alt="Beach background">
+    <img class="logo" src="assets/logo.png" alt="Agency logo">
+    <div class="hero-section">
+        <h1 class="hero-title">Discover Your Next Adventure</h1>
+<a class="hero-button nav-link" href="/Travel-Agency-App/#/Travel-Agency-App/trips">Explore Trips</a>
+    </div>
+</div>
+
+<div class="trip-carousel" *ngIf="tripImages.length > 0">
+    <h1 class="featured-title">Featured Trips</h1>
+    <div class="carousel-container">
+        <button class="nav-btn left" (click)="scrollLeft()" [disabled]="!tripImages.length"><</button>
+        <div class="carousel-wrapper" #carousel>
+            <div class="carousel-slide" *ngFor="let trip of tripImages; trackBy: trackByFn">
+                <div class="image-overlay">
+                    <img [src]="trip.image" alt="{{ trip.title || 'Trip image' }}" />
+                    <div class="trip-title">{{ trip.title }}</div>
+                </div>
+            </div>
+        </div>
+        <button class="nav-btn right" (click)="scrollRight()" [disabled]="!tripImages.length">></button>
+    </div>
+</div>
+
+<div class="contact-and-map-container">
+    <div class="contact-and-map">
+        <div class="contact">
+            <h3>Contact Us</h3>
+            <p>Phone: +216 74 352 234</p>
+            <p>Email: TripAgency@gmail.com</p>
+            <h3>Our Address</h3>
+            <p>Sfax, Tunisia</p>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086108305614!2d10.761230315316!3d34.739816980426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13002cdd32b15b39%3A0x2f8b8e4a7a7b8c3!2sSfax%2C%20Tunisia!5e0!3m2!1sen!2sus!4v1635789123456!5m2!1sen!2sus" 
+                    width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>© 2025 Trip Agency. All rights reserved.</p>
+    <p>Follow us on <a href="https://x.com/tripagency">X</a> | <a href="mailto:TripAgency@gmail.com">Contact Us</a></p>
+</footer>

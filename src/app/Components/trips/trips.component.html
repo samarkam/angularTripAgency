@@ -1,0 +1,7 @@
+<body>
+    <div class="row g-3 align-items-center">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let trip of trips; index as idx">
+            <app-trip2 [trip]="trip"></app-trip2>
+        </div>
+    </div>
+</body>

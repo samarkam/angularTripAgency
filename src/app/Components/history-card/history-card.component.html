@@ -1,0 +1,28 @@
+
+<div class="card">
+    <span class="badge status ongoing" *ngIf="getStatus() == 1">Ongoing</span>
+    <span class="badge status ended" *ngIf="getStatus() == 0">Ended</span>
+    <span class="badge status future" *ngIf="getStatus() == 2">Future</span>
+    <img [src]="data.image" class="card-img-top" alt="...">
+    <div class="name">
+        <h3 class="title">{{data.title}}</h3>
+        <span class="badge rounded-pill bg-warning" style="padding: 3px 8px; height: 1.5em; margin-top: 0.8em; margin-left: 0.3em;">
+            <strong style="font-size: 0.5em;">
+                <i class="bi bi-star-fill"></i>
+                3.7/5.0
+            </strong>
+        </span>
+    </div>
+    <p class="date">{{data.dayOut}} - {{data.dayIn}}</p>
+    <app-trip-details class="info"></app-trip-details>
+    <div class="footer">
+        <div class="checkout">
+            <div class="places">
+                <h1 class="place">{{data.places}} </h1>
+                <i class="bi bi-ticket-perforated"></i>
+            </div>
+            <h1 class="price">{{data.places * data.price}}TND</h1>
+        </div>
+    </div>
+</div>
+
