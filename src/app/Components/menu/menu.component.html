@@ -35,6 +35,11 @@
                 <i class="bi bi-person"></i>
                 <a class="nav-link" href="#">Account</a>
             </li> -->
+             <!-- For admin -->
+            <li class="nav-item" *ngIf="authService.userRoles.admin">
+                <i class="bi bi-graph-up-arrow"></i>
+                <a class="nav-link" href="/Travel-Agency-App/#/Travel-Agency-App/dashboard">Dashboard</a>
+            </li>
             <!-- For admin -->
             <li class="nav-item" *ngIf="authService.userRoles.admin">
                 <i class="bi bi-people"></i>

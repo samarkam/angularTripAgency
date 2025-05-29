@@ -1,10 +1,10 @@
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">{{data.title | uppercase}}</h3>
+        <h3 class="card-title text-uppercase">{{data.title}}</h3>
     </div>
     <div class="card-body">
         <img [src]="data.image" class="card-img-top" alt="...">
-        <h5 class="country">{{data.country | uppercase}}</h5>
+        <h5 class="country text-uppercase">{{data.country}}</h5>
         <h6 class="date">{{data.dayIn}} - {{data.dayOut}}</h6>
         <p class="description" style="overflow: scroll; max-height: 174px;">{{data.description}}</p>
         <p class="places">Number of places: {{data.places}}</p>

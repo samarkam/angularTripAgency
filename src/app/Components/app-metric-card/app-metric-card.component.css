@@ -1,0 +1,66 @@
+  .metric-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      display: flex;
+      gap: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .metric-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .icon-container {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: rgba(25, 118, 210, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .icon-container .material-icons {
+      font-size: 24px;
+      color: #1976D2;
+    }
+    
+    .metric-details {
+      flex: 1;
+    }
+    
+    .metric-details h3 {
+      font-size: 14px;
+      color: #666;
+      margin: 0 0 8px 0;
+      font-weight: normal;
+    }
+    
+    .metric-value {
+      font-size: 24px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    
+    .metric-change {
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .metric-change.up {
+      color: #4CAF50;
+    }
+    
+    .metric-change.down {
+      color: #F44336;
+    }
+    
+    .metric-change .material-icons {
+      font-size: 16px;
+    }

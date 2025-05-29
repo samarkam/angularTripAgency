@@ -17,6 +17,7 @@ import { LoggedGuard } from './Authentication Guards/logged.guard';
 import { MasterGuard } from './Authentication Guards/master.guard';
 
 import { APP_BASE_HREF } from '@angular/common';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: MainScreenComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'cart', component: ShoppingCartComponent, canActivate: [ClientGuard]},
   { path: 'login', component: LoginViewComponent},
   { path: 'register', component: RegisterViewComponent},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard]},
   { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard]},
   { path: 'manager', component: ManageTripsComponent, canActivate: [MasterGuard]},
   { path: "**", component: PageNotFoundComponent}

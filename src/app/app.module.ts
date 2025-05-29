@@ -41,6 +41,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
 import { ManageTripsComponent } from './Components/manage-trips/manage-trips.component';
 import { EditModalComponent } from './Components/edit-modal/edit-modal.component';
+import { AppMetricCardComponent } from './Components/app-metric-card/app-metric-card.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -75,6 +78,8 @@ import { EditModalComponent } from './Components/edit-modal/edit-modal.component
     AdminDashboardComponent,
     ManageTripsComponent,
     EditModalComponent,
+    DashboardComponent,
+    AppMetricCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,7 +90,8 @@ import { EditModalComponent } from './Components/edit-modal/edit-modal.component
     AngularFirestoreModule,
     ReactiveFormsModule,
     FormsModule,
-
+    NgChartsModule,
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

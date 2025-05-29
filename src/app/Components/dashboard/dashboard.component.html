@@ -1,0 +1,78 @@
+<!-- First Row: Metric Cards -->
+  <div class="pt-2 pb-5" style="background: linear-gradient(315deg, #FFF 0%, #FF6B6B 56%);">
+
+<h2 class="text-center m-2"  style="padding-top: 50px !important; color: white;">DASHBOARD</h2>
+
+<div style="margin-top: 50px !important; margin-right: 100px !important; margin-left: 100px !important;display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px;">
+
+
+  <app-metric-card 
+    icon="bi bi-airplane"
+    title="Total Bookings" 
+    value="1,286" 
+    change="+12.3%" 
+    trend="up">
+  </app-metric-card>
+
+  <app-metric-card 
+    icon="bi bi-currency-dollar"
+    title="Revenue" 
+    value="258,456 TND" 
+    change="+8.7%" 
+    trend="up">
+  </app-metric-card>
+
+  <app-metric-card 
+    icon="bi bi-geo-alt"
+    title="Destinations" 
+    value="48" 
+    change="+3" 
+    trend="up">
+  </app-metric-card>
+
+  <app-metric-card 
+    icon="bi bi-people"
+    title="New Customers" 
+    value="328" 
+    change="-2.5%" 
+    trend="down">
+  </app-metric-card>
+</div>
+
+<!-- Second Row: Charts -->
+<div style="max-width: 1000px; margin: 0 auto;">
+   <div class="card p-2" style="margin-top: 50px !important;">
+      <h3 class="text-center m-2" >Line Chart: Weekly Bookings</h3>
+        <canvas baseChart
+                [data]="lineChartData"
+                [options]="lineChartOptions"
+                [type]="'line'">
+        </canvas>
+  </div>
+ <div class="card p-2"  style="margin-top: 50px !important;">
+  <h3 class="text-center m-2">Line Chart: Monthly Bookings</h3>
+    <canvas baseChart
+            [data]="lineChartDataMonths"
+            [options]="lineChartOptions"
+            [type]="'line'">
+    </canvas>
+  </div>
+ <div class="card p-2"  style="margin-top: 50px !important;">
+  <h3 class="text-center m-2" >Bar Chart: Service Sales</h3>
+    <canvas baseChart
+            [data]="barChartData"
+            [type]="'bar'">
+    </canvas>
+  </div>
+ <div class="card p-2"  style="margin-top: 50px !important;">
+
+    <h3 class="text-center m-2" >Doughnut Chart: Regional Distribution</h3>
+    <div style="    margin-left: 341px !important;max-width: 300px;"class="text-center m-2">
+      <canvas baseChart
+              [data]="doughnutChartData"
+              [type]="'doughnut'">
+      </canvas>
+    </div>
+  </div>
+</div>
+</div> 
