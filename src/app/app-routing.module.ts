@@ -22,7 +22,6 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 const routes: Routes = [
   { path: '', component: MainScreenComponent },
   { path: 'home', component: MainScreenComponent },
-  { path: 'Travel-Agency-App/home', component: MainScreenComponent },
   { path: 'trips', component: TripsComponent },
   { path: 'history', component: HistoryComponent, canActivate: [ClientGuard]},
   { path: 'cart', component: ShoppingCartComponent, canActivate: [ClientGuard]},
@@ -35,10 +34,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '/Travel-Agency-App/' }
+    { provide: APP_BASE_HREF, useValue: '/' }
   ]
 })
 export class AppRoutingModule { }
