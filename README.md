@@ -15,23 +15,48 @@ Welcome to the Travel Agency App repository! This Angular project, integrated wi
 - Angular - A powerful JavaScript framework for building robust web applications.
 - Firebase - A comprehensive platform for developing mobile and web applications, providing authentication, database, and hosting services.
 
+### Home Panel
+![Home Panel](captureReadMe/home.png)
 
 
+### Anonymous Menu
+![Anonymous Menu](captureReadMe/anonymousMenu.png)
+
+### Trips Catalogue
+![Trips Catalogue](captureReadMe/trips.png)
+
+### Login panel
+![Login panel](captureReadMe/login.png)
+
+
+### Signup panel
+![Signup panel](captureReadMe/signup.png)
 
 ### Trip Details
-![Trip Details](screenshots/trip-details.png)
+![Trip Details](captureReadMe/trip-details1.png)
+![Trip Details](captureReadMe/trip-details2.png)
 
-### Shopping Cart
-![Shopping Cart](screenshots/cart.png)
 
 ### Reviews
-![Reviews](screenshots/reviews.png)
+![Trip Reviews](captureReadMe/trip-details3.png)
+![Trip Reviews](captureReadMe/trip-details4.png)
+
+
+
+
+### Admin Menu
+![Admin Menu](captureReadMe/adminMenu.png)
+
+### Dashboard Panel
+![Dashboard Panel](captureReadMe/dashboard.png)
 
 ### Manage Trips Panel
-![Manage Trips Panel](screenshots/manage-trips.png)
+![Manage Trips Panel](captureReadMe/manageTrips.png)
+![Add Trips](captureReadMe/addTrip.png)
+![Edit Trips](captureReadMe/editTrip.png)
 
 ### Manage Users Panel
-![Manage Users Panel](screenshots/manage-users.png)
+![Manage Users Panel](captureReadMe/manageUsers.png)
 
 
 
