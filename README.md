@@ -30,16 +30,16 @@ Welcome to the Travel Agency App repository! This Angular project, integrated wi
 
 
 ### Signup panel
-![Signup panel](captureReadMe/signup.png)
+![Signup panel](captureReadMe/singup.png)
 
 ### Trip Details
-![Trip Details](captureReadMe/trip-details1.png)
-![Trip Details](captureReadMe/trip-details2.png)
+![Trip Details](captureReadMe/tripDetail1.png)
+![Trip Details](captureReadMe/tripDetail2.png)
 
 
 ### Reviews
-![Trip Reviews](captureReadMe/trip-details3.png)
-![Trip Reviews](captureReadMe/trip-details4.png)
+![Trip Reviews](captureReadMe/tripDetail3.png)
+![Trip Reviews](captureReadMe/tripDetail4.png)
 
 
 
